@@ -1,0 +1,17 @@
+[package]
+name = "random-5chars"
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "rand-5words"
+path = "src/main.rs"
+
+[dependencies]
+rand = "0.8.5"
+rayon = "1.5"
+
+[profile.release]
+lto = true
