@@ -12,13 +12,11 @@ fn main() -> std::io::Result<()> {
     let tmp_first_arg = first_arg
         .parse::<usize>()
         .expect("Please provide valid number");
-    let mut number_words;
-
-    if tmp_first_arg > 0 {
-        number_words = tmp_first_arg;
+    let mut number_words = if tmp_first_arg > 0 {
+        tmp_first_arg
     } else {
-        number_words = NUMBER_WORDS;
-    }
+        NUMBER_WORDS
+    };
 
     // or use `include_str!` to embed this dict into the binary
     let words_strings = fs::read_to_string("/usr/share/dict/words")?;
