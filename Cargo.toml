@@ -16,3 +16,5 @@ rayon = "1.5"
 [profile.release]
 lto = true
 strip = true
+codegen-units = 1
+
